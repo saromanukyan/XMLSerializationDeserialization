@@ -10,6 +10,7 @@ public class CocktailService {
 
     public static Cocktail deserializeXML(String xml) {
         XStream xStream = new XStream(new StaxDriver());
+        xStream.addPermission(AnyTypePermission.ANY);
         return (Cocktail) xStream.fromXML(xml);
     }
 }
